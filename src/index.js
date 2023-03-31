@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { StateProvider } from '../src/Components/StateProvider';
@@ -12,7 +12,7 @@ root.render(
   
    <StateProvider initialState={initialState} reducer={reducer}>
     <App />
-</StateProvider>
+   </StateProvider>
  
   </React.StrictMode>
 );

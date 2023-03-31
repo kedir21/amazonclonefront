@@ -1,7 +1,7 @@
 import React from 'react'
 import './Product.css'
 import StarIcon from '@mui/icons-material/Star';
-import { useStateValue } from '../Components/StateProvider';
+import { useStateValue } from '../StateProvider';
 
 function Product({id,title,price,rating,image}) {
   const [{basket}, dispatch]= useStateValue();

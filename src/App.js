@@ -5,14 +5,15 @@ import CheckOut from './Components/CheckOut/CheckOut';
 import { auth } from './Components/firebase';
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
-// import Payment from './Components/Payment/Payment';
+import Payment from './Components/Payment/Payment';
 import { useStateValue } from './Components/StateProvider';
-import Home from './Home/Home';
-// import { loadStripe } from '@stripe/stripe-js';
-// import { Elements } from '@stripe/react-stripe-js';
-// const stripePromise = loadStripe(
-//   'pk_test_51MpmLRKGdWrfNB1orVGXouEPva0M9NBw0W6ol35jO9rFdtN6T3xGnSX0jsGYmXEKm5L2Yi54xSTHiw06ZVsHW0OH00zUUFP6Th'
-// );
+import Home from './Components/Home/Home';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+// import Orders from './Components/Orders/Orders';
+const stripePromise = loadStripe(
+  'pk_test_51MpmLRKGdWrfNB1orVGXouEPva0M9NBw0W6ol35jO9rFdtN6T3xGnSX0jsGYmXEKm5L2Yi54xSTHiw06ZVsHW0OH00zUUFP6Th'
+);
 
 
 function App() {
@@ -46,12 +47,18 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path='/login' element={<Login />} />
+        <Route path='/orders' element={<Header />} />
         <Route path='/' element={<><Header /><Home /></>} />
         <Route path='/checkout' element={<><Header /><CheckOut /></>} />
-        {/* <Route
+        <Route
             path="/Payment"
-            element={<Elements stripe={stripePromise}>{<Payment />}</Elements>}
-          /> */}
+            element={ <> <Header />
+             <Elements stripe={stripePromise}>
+
+              <Payment />
+             
+             </Elements> </> }
+          />
       </Routes>
     </div>
     </Router>
