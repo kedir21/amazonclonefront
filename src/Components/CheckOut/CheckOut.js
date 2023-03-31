@@ -18,8 +18,9 @@ const CheckOut = () => {
         
           <h3>Hello </h3>
           <h2 className="checkout__title">Your shopping Basket</h2>
-          {basket.map((item) => (
+          {basket.map((item ,i) => (
             <CheckOutProduct
+              key={i}
               id={item.id}
               title={item.title}
               image={item.image}

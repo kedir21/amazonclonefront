@@ -23,8 +23,8 @@ const CheckoutProduct = ({id,title,price,rating,image,hideButton}) => {
         <div className="checkoutProduct__rating">
           {Array(rating)
             .fill()
-            .map((_, i) => (
-              <p><StarIcon /></p>
+            .map((p, i) => (
+              <p key={i}><StarIcon /></p>
             ))}
         </div>
         {!hideButton && (

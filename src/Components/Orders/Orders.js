@@ -4,8 +4,7 @@ import Order from './Order';
 import './Orders.css';
 import { useStateValue } from '../StateProvider';
 const Orders = () => {
-    const [{ basket, user }, dispatch] = useStateValue();
-
+  const [{ basket, user }, dispatch] = useStateValue();
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {

@@ -31,8 +31,8 @@ function Product({id,title,price,rating,image}) {
         <div className='product__rating'>
         {Array(rating)
             .fill()
-            .map(() => (
-              <p><StarIcon /></p>
+            .map((p, id) => (
+              <p key={id}><StarIcon /></p>
             ))}
         </div>
      </div>

@@ -14,7 +14,6 @@ function Header() {
             if(user) {
                 auth.signOut();
             }
-        
     };
 
   return (
@@ -32,22 +31,25 @@ function Header() {
     </div>
     <div className='header__nav'>
 
-        <Link to={!user &&  '/login'}>
+        <Link to={!user &&  '/login'} className='header__clearLink'>
         <div onClick={handleAuthentication} className='header__option'>
             <span className='header__optionLineOne'>Hello { !user ? 'Guest' : user.email}</span>
             <span className='header__optionLineTwo'>{user ? 'Sign Out' : 'Sign In'}</span>
         </div>
         </Link>
 
+        <Link to='/orders' className='header__clearLink'>
         <div className='header__option'>
             <span className='header__optionLineOne'>Returns</span>
             <span className='header__optionLineTwo'>& Orders</span>
         </div>
+        </Link>
+       
         <div className='header__option'>
             <span className='header__optionLineOne'>Your</span>
             <span className='header__optionLineTwo'>Prime</span>
         </div>
-        <Link to='/checkout'>
+        <Link to='/checkout' className='header__clearLink'>
         <div className='header__optionBasket'>
             <ShoppingCartIcon />
             <span className='header__optionalLineTwo header__basketCount'>
